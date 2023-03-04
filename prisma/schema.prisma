@@ -12,8 +12,8 @@ datasource db {
 
 
 model Products {
-  id      Int @id @default(autoincrement())
-  title   String
+  id          Int @id @default(autoincrement())
+  title       String
   description String
   price       String
   stock       String

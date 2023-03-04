@@ -1,10 +1,22 @@
 {
   "compilerOptions": {
+    "baseUrl": "./src",
+    "paths": {
+      "*": ["node_modules/*"],
+      "@controllers/*" : ["./controllers/*"],
+      "@database/*" : ["./database/*"],
+      "@middleware/*": ["./middleware/*"],
+      "@model/*": ["./model/*"],
+      "@routes/*": ["./routes/*"],
+      "@service/*": ["./service/*"],
+    },
     "sourceMap": true,
     "outDir": "dist",
     "strict": true,
     "lib": ["esnext"],
     "esModuleInterop": true,
+
+
     /* Visit https://aka.ms/tsconfig to read more about this file */
 
     /* Projects */
