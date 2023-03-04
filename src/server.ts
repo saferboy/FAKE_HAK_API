@@ -5,7 +5,7 @@ import "./setup"
 import express from "express";
 import cors from "cors"
 
-// import api from "./api/rout"
+import api from "./routes/router"
 
 const app = express()
 

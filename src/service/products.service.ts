@@ -20,7 +20,7 @@ export const getAllProducts = async () => {
 
 
 //  get '/products/:id' => get one products by id 
-export const getPRoductsById = async (productId: number) => {
+export const getProductsById = async (productId: number) => {
     return prisma.products.findUnique({
         where: {
             id: productId

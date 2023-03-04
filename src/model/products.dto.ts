@@ -1,4 +1,5 @@
 export interface ProductDto {
+    id:             number,
     title:          string,
     description:    string,
     price:          string,
@@ -6,3 +7,4 @@ export interface ProductDto {
     brand:          string,
     category:       string
 }
+
