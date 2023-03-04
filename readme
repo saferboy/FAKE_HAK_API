@@ -1,0 +1,74 @@
+/**
+ * 
+npm i express @types/express
+
+npm i module-alias @types/alias
+npm i dotenv @types/dotenv
+
+npm i joi @types/joi
+
+
+npm init -y
+
+npm install typescript ts-node @types/node --save-dev
+
+npx tsc --init
+
+
+settings package.json => 
+"scripts": {
+    "test": "ts-node src/server.ts",
+    "dev": "nodemon src/server.ts"
+}
+
+
+prisma settings => 
+
+npm install prisma --save-dev
+
+enter .env file and write
+DATABASE_URL="postgresql://postgres:1@localhost:5432/fake?schema=public"
+
+next create model schema.prisma file
+
+for example => 
+model Products {
+  id      Int @id @default(autoincrement())
+  title   String
+  description String
+  price       String
+  stock       String
+  brand       String
+  category    String
+}
+ 
+npx prisma migrate dev --name (migrate name)
+
+
+open new folder => 
+src 
+  api
+  controller
+  middleware
+  model
+  routes
+  service
+  database
+
+
+//  get '/' => all products
+//  get '/products/:id' => get one products by id 
+//  get '/products/brand/brand/:brand' => get products by brand
+//  get '/products/category/:category' => get products by category
+//  post '/products' => create products
+//  put '/products/:id' => update products by id
+//  delete '/products:id' => delete products by id
+//  _________________________________________________
+
+//  get "/categories"   =>  get all categories
+//  get "/categories/:id"   =>  get one categories by id
+//  post "/categories"  =>  create category
+//  put "/categories/:id"   => update category by id
+//  delete "/categories/:id"    => delete category by id
+
+*/
