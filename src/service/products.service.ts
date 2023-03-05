@@ -65,7 +65,7 @@ export const createProduct = async (product: ProductDto) => {
 
 
 //  put '/products/:id' => update products by id
-export const updateProductById = async (productId: number, product: ProductDto) => {
+export const updateProductById = async (id: number, product: ProductDto) => {
     return prisma.products.update({
         data: {
             title:          product.title,
@@ -76,7 +76,7 @@ export const updateProductById = async (productId: number, product: ProductDto) 
             category:       product.category
         },
         where: {
-            id:     productId
+            id:     id
         }
     })
 };
@@ -84,10 +84,10 @@ export const updateProductById = async (productId: number, product: ProductDto) 
 
 
 //  delete '/products:id' => delete products by id
-export const deleteProductById = async (productId: number) => {
+export const deleteProductById = async (id: number) => {
     return prisma.products.delete({
         where: {
-            id:       productId
+            id:     id
         }
     })
 }
