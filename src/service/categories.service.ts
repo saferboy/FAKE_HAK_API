@@ -1,5 +1,5 @@
 import { PrismaClient } from '.prisma/client'
-import { CategoryDto, ctgDto } from '@model/category.dto'
+import {  ctgDto } from '@model/category.dto'
 
 
 const prisma = new PrismaClient({
@@ -10,17 +10,17 @@ const prisma = new PrismaClient({
 
 
 //  get "/categories"   =>  get all categories
-export const getCategories = async () => {
+export const getAllCategories = async () => {
     return prisma.categories.findMany()
 };
 
 
 
 //  get "/categories/:id"   =>  get one categories by id
-export const getCategoryById = async (categoryId: number) => {
+export const getCategoryById = async (id: number) => {
     return prisma.categories.findUnique({
         where: {
-            id:     categoryId
+            id:     id
         }
     })
 };
