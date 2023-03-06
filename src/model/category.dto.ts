@@ -4,5 +4,6 @@ export interface CategoryDto {
 };
 
 export interface ctgDto {
+    id:         number,
     name:       string
 }

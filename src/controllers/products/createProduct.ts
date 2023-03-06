@@ -1,6 +1,6 @@
 import { Request, Response, NextFunction } from "express";
 import { createProduct } from "@service/products.service";
-import { ProductDto } from "@model/products.dto";
+// import { ProductDto } from "@model/products.dto";
 
 
 export default async (req: Request, res: Response, next: NextFunction) => {
