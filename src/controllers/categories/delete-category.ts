@@ -10,14 +10,14 @@ export default async (req: Request, res: Response, next: NextFunction) => {
         
         if (!find) {
             return res.status(403).json({
-                message: "Category not found this id: " + id
+                message: "Category not found"
             })
         }
 
         const category = await deleteCategoryById(id)
 
         return res.status(200).json({
-            message: "Category updated",
+            message:  "Category deleted",
             category: {
                 id: category.id,
                 name: category.name,
