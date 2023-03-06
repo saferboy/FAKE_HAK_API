@@ -6,7 +6,7 @@ export default async (req: Request, res: Response, next: NextFunction) => {
 
     try {
         
-        const categoryName = req.body.category
+        const categoryName = req.params.category
 
         const find = await getProductsByCategory(categoryName)
 
@@ -16,10 +16,11 @@ export default async (req: Request, res: Response, next: NextFunction) => {
             })
         }
 
-        res.json({
-            message: "Categories found",
+        return res.status(200).json({
+            message: "Category found",
             category: find
         })
+       
 
     } catch (error) {
         next(error)

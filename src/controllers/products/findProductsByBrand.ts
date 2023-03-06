@@ -6,19 +6,19 @@ export default async (req: Request, res: Response, next: NextFunction) => {
 
     try {
         
-        const brand = req.body
+        const brand = req.params.brand
 
-        const products = await getProductsByBrand(brand)
+        const brands = await getProductsByBrand(brand)
 
-        if(!products) {
+        if(!brands) {
             return res.status(404).json({
                 message: "Brand not found"
             })
         }
 
         res.json({
-            message: "All Brands",
-            products: products
+            message: "This Brand",
+            brand: brands
         })
 
     } catch (error) {

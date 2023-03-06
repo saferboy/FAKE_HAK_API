@@ -3,7 +3,7 @@ import{ PrismaClient }  from "@prisma/client"
 
 export const client = new PrismaClient({
     // connectionString: process.env.
-    log: process.env.DATABASE_URL
+    // log: process.env.DATABASE_URL
 })
 
 

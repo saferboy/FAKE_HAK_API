@@ -1,11 +1,11 @@
 import dotenv from "dotenv"
 dotenv.config()
 
-import "./setup"
+import "./alias"
 import express from "express";
 import cors from "cors"
 
-import api from "./routes/router"
+import api from "./routes/index"
 
 const app = express()
 
@@ -16,7 +16,7 @@ app.use(express.urlencoded({extended: true}))
 
 const port = process.env.PORT
 
-// app.use('/api', api)
+app.use('/api', api)
 
 app.listen(port, () => {
     console.log(`Server is running is port ${port}`)

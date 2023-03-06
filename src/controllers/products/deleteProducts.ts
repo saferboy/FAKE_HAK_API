@@ -2,10 +2,10 @@ import { Request, Response, NextFunction } from "express";
 import { deleteProductById, getProductsById } from "@service/products.service";
 
 export default async (req: Request, res: Response, next: NextFunction) => {
-      
+
     try {
-        
-        const id = +req.params.id   
+
+        const id = +req.params.id
 
         const oldProduct = await getProductsById(id)
 
@@ -16,14 +16,23 @@ export default async (req: Request, res: Response, next: NextFunction) => {
             })
         }
 
-        await deleteProductById(id)
+        const deleted = await deleteProductById(id)
 
         res.status(200).json({
-            message: "Product deleted"
+            message: "Product deleted",
+            product: {
+                id:   deleted.id,
+                title: deleted.title,
+                description: deleted.description,
+                price: deleted.price,
+                stock: deleted.stock,
+                brand: deleted.brand,
+                category: deleted.category
+            }
         })
 
     } catch (error) {
-        
+        next(error)
     }
 
 }

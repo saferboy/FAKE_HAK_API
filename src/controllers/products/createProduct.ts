@@ -6,7 +6,7 @@ import { ProductDto } from "@model/products.dto";
 export default async (req: Request, res: Response, next: NextFunction) => {
     try {
 
-        const data: ProductDto = req.body 
+        const data = req.body 
 
         const product = await createProduct(data)
 
