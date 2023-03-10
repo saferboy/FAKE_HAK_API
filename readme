@@ -26,6 +26,8 @@ prisma settings =>
 
 npm install prisma --save-dev
 
+npx prisma init
+
 enter .env file and write
 DATABASE_URL="postgresql://postgres:1@localhost:5432/fake?schema=public"
 
